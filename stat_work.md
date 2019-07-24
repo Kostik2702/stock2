@@ -1,4 +1,4 @@
-[tags]: <> (sql, mysql, total period, period)
+[tags]: <> (sql, mysql, total period, period, stat)
 *Total for petiod MAX and AVG*
 ```sql
 SELECT
@@ -15,7 +15,7 @@ GROUP BY TicketDate
 ```
 [tags-end]: <>
 
-[tags]: <> (sql, mysql, enterprise period, period)
+[tags]: <> (sql, mysql, enterprise period, period, stat)
 *SMS Enterprise for period*
 ```sql
 SELECT
@@ -34,7 +34,7 @@ GROUP BY TicketDate
 ```
 [tags-end]: <>
 
-[tags]: <> (sql, mysql, enterprise urgent period, period)
+[tags]: <> (sql, mysql, enterprise urgent period, period, stat)
 *SMS Enterprise URGENT for period*
 ```sql
 SELECT 
@@ -59,7 +59,7 @@ GROUP BY TicketDate
 [tags-end]: <>
 
 
-[tags]: <> (sql, mysql, transit period, period)
+[tags]: <> (sql, mysql, transit period, period, stat)
 *SMS Transit for period*
 ```sql
 SELECT
@@ -78,7 +78,7 @@ GROUP BY TicketDate
 ```
 [tags-end]: <>
 
-[tags]: <> (sql, mysql, transit urgent period, period)
+[tags]: <> (sql, mysql, transit urgent period, period, stat)
 *SMS Transit URGENT for period*
 ```sql
 SELECT 
@@ -103,7 +103,7 @@ GROUP BY TicketDate
 ```
 [tags-end]: <>
 
-[tags]: <> (sql, mysql, voice key period, period)
+[tags]: <> (sql, mysql, voice key period, period, stat)
 *Voice key for period*
 ```sql
 SELECT
@@ -122,7 +122,7 @@ GROUP BY TicketDate
 ```
 [tags-end]: <>
 
-[tags]: <> (sql, mysql, voice key urgent period, period)
+[tags]: <> (sql, mysql, voice key urgent period, period, stat)
 *Voice key URGENT for period*
 ```sql
 SELECT 
