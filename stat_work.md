@@ -148,7 +148,8 @@ GROUP BY TicketDate
 
 [tags]: <> (testers,day, stat)
 *TESTS per TESTER FOR DAY*
-```SELECT (USERS.last_name ) AS TESTER_SURNAME, (USERS.first_name ) AS TESTER_NAME, VoiceTestsTable.Count AS VOICE, 
+```sql 
+SELECT (USERS.last_name ) AS TESTER_SURNAME, (USERS.first_name ) AS TESTER_NAME, VoiceTestsTable.Count AS VOICE, 
 SMSTestsTable.Count AS SMS, (VoiceTestsTable.Count + SMSTestsTable.Count) AS TOTAL FROM mmdportal_user AS USERS
 
 JOIN (
