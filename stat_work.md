@@ -145,3 +145,43 @@ AND Tickets.status ='11') AS TimeResult
 GROUP BY TicketDate
 ```
 [tags-end]: <>
+
+[tags]: <> (testers,day, stat)
+*TESTS per TESTER FOR DAY*
+```SELECT (USERS.last_name ) AS TESTER_SURNAME, (USERS.first_name ) AS TESTER_NAME, VoiceTestsTable.Count AS VOICE, 
+SMSTestsTable.Count AS SMS, (VoiceTestsTable.Count + SMSTestsTable.Count) AS TOTAL FROM mmdportal_user AS USERS
+
+JOIN (
+	
+	SELECT COUNT(VoiceTests.id) AS Count, MMDUSER.last_name AS LAST_NAME
+	FROM  mmdportal_user AS MMDUSER
+	LEFT JOIN TicketTestData AS VoiceTests
+	ON VoiceTests.assigned = MMDUSER.id
+	AND VoiceTests.assigned=MMDUSER.id
+	AND date (from_unixtime(VoiceTests.date_finish)) = '2019-10-28'
+	AND hour(from_unixtime(VoiceTests.date_finish)) > '06:00:00'
+	AND hour(from_unixtime(VoiceTests.date_finish)) < '20:00:01'
+
+	where MMDUSER.last_name IN('Konstantin', 'Matros','Nedopako','Shylova','Sachuk','Stepanov','Noskova','Litachevskyi', 'Tyndyryka')
+	GROUP BY LAST_NAME
+) AS VoiceTestsTable
+ON VoiceTestsTable.LAST_NAME = USERS.last_name
+ 
+JOIN(
+	SELECT COUNT(SMSTests.id) AS Count, MMDUSER.last_name AS LAST_NAME
+	FROM  mmdportal_user AS MMDUSER
+	LEFT JOIN TicketTestDataSms AS SMSTests
+	ON SMSTests.assigned = MMDUSER.id
+	AND SMSTests.assigned=MMDUSER.id
+	AND date (from_unixtime(SMSTests.date_finish)) = '2019-10-28'
+	AND hour(from_unixtime(SMSTests.date_finish)) > '06:00:00'
+	AND hour(from_unixtime(SMSTests.date_finish)) < '20:00:01'
+
+	where MMDUSER.last_name IN('Konstantin', 'Matros','Nedopako','Shylova','Sachuk','Stepanov','Noskova','Litachevskyi', 'Tyndyryka')
+	GROUP BY LAST_NAME
+) AS SMSTestsTable
+ON SMSTestsTable.LAST_NAME = USERS.last_name
+
+group by TESTER_SURNAME
+```
+[tags-end]: <>
