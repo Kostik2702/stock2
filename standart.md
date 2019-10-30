@@ -539,8 +539,8 @@
 ```
 [tags-end]: <>
 
-[tags]: <> ( Kazakhstan, Almaty, proper)
-* Kazakhstan, Almaty, proper*
+[tags]: <> (Kazakhstan, Almaty, proper)
+*Kazakhstan, Almaty, proper*
 ```
 77272769598
 77272279032
